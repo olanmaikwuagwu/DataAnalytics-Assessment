@@ -6,15 +6,18 @@ SELECT
         WHEN p.is_a_fund = 1 THEN 'Investment'
         ELSE NULL
     END AS type,
-    COALESCE(MAX(DATE(s.transaction_date)), DATE(p.withdrawal_date)) AS last_transaction_date,
+    COALESCE(MAX(DATE(s.transaction_date)), DATE(p.withdrawal_date)) AS last_transaction_date, /* Checks the last transaction
+dates in the savings and plans tables. */
     DATEDIFF(
         CURDATE(),
         COALESCE(MAX(DATE(s.transaction_date)), DATE(p.withdrawal_date))
-    ) AS inactivity_days
+    ) AS inactivity_days  -- Check the number of days between the current date and the last transaction date
 FROM savings_savingsaccount s
 JOIN plans_plan p ON s.plan_id = p.id
 WHERE
+    
     -- Only active accounts
+    
     p.status_id = 1
     AND s.verification_status_id = 1
     
