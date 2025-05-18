@@ -8,7 +8,8 @@ WITH savings AS(
 	SELECT owner_id,
     SUM(confirmed_amount) AS total_deposit
     FROM savings_savingsaccount
-    WHERE confirmed_amount IS NOT NULL
+    WHERE confirmed_amount IS NOT NULL 
+    OR confirmed_amount != 0
     GROUP BY owner_id
 ),
 
