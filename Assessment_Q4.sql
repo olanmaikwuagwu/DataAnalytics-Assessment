@@ -6,10 +6,10 @@ SELECT
 	TIMESTAMPDIFF(MONTH, u.created_on, MAX(DATE(s.transaction_date))) AS tenure_months,
 	COUNT(s.id) AS total_transactions, 
 	ROUND(
-	(COUNT(s.id) / NULLIF(TIMESTAMPDIFF(MONTH, u.created_on, MAX(DATE(s.transaction_date))), 0))
-	* 12
-	* 0.001
-	* COALESCE(AVG(s.confirmed_amount), 0), 2)  AS estimated_clv
+		(COUNT(s.id) / NULLIF(TIMESTAMPDIFF(MONTH, u.created_on, MAX(DATE(s.transaction_date))), 0))
+		* 12
+		* 0.001
+		* COALESCE(AVG(s.confirmed_amount), 0), 2)  AS estimated_clv
 FROM 
 users_customuser u
 LEFT JOIN savings_savingsaccount s ON u.id = s.owner_id
