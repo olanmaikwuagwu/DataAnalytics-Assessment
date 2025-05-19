@@ -14,3 +14,13 @@
 Challenge: 
     The challenge encountered in this question is being sure that the sum of confirmed amount from the savings table also 
     covers funding for investment. 
+
+Question 2.  Calculate the average number of transactions per customer per month and categorize them:
+         "High Frequency" (≥10 transactions/month)
+         "Medium Frequency" (3-9 transactions/month)
+          "Low Frequency" (≤2 transactions/month)
+
+   *   Define transactions in terms of inflows and outflows. That is, deposits and withdrwals.
+   *   From the users table, obtain data about customer id and name.
+   *   Assume deposits as confirmed amount greater than 0.
+   *   Assume withdrawals as amount withdrawn greater than 0.  
