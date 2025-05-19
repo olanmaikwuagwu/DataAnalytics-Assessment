@@ -32,7 +32,7 @@ Question 2.  Calculate the average number of transactions per customer per month
 Challenge: 
   I was uncertain about all the real indicators of transactions. So, I narrowed the definition of transactions to deposits 
   and withdrawals. I had to use the withdrawals table to get amount withdrawn even though the table was not included under 
-  tasks.
+  the task.
 
 Question 3. Find all active accounts (savings or investments) with no transactions in the last 1 year (365 days) .
 
